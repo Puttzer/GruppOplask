@@ -1,15 +1,22 @@
 <template>
   <div class="gallery">
+    <Lightbox :show="show" />
     <div class="wrapper" v-for="image in images" v-bind:key="image.id">
-      <img :src="image.url" alt @click="test()" />
+      <img :src="image.url" alt v-on:click="showLightbox" />
     </div>
   </div>
 </template>
 
 <script>
+import Lightbox from "./Lightbox";
 export default {
+  props: {
+    show: Boolean
+  },
+  components: { Lightbox },
   data: () => {
     return {
+      show: false,
       images: [
         {
           url:
@@ -21,8 +28,8 @@ export default {
   },
 
   methods: {
-    test: function test() {
-      console.log("yes");
+    showLightbox() {
+      this.show = true;
     }
   }
 };
