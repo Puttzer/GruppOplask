@@ -12,19 +12,8 @@ export default {
     return {
       images: [
         {
-          url:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExOTYwNn0",
-          id: 1
-        },
-        {
-          url:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExOTYwNn0",
-          id: 2
-        },
-        {
-          url:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExOTYwNn0",
-          id: 3
+          url: "",
+          id: 
         }
       ]
     };
@@ -40,7 +29,7 @@ export default {
 
   .wrapper {
     img {
-      max-width: 100px;
+      max-width: 310px;
     }
   }
 }
