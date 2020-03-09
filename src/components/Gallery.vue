@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <div class="wrapper" v-for="image in images" v-bind:key="image.id">
-      <img :src="image.url" alt />
+      <img :src="image.url" alt @click="test()" />
     </div>
   </div>
 </template>
@@ -12,11 +12,18 @@ export default {
     return {
       images: [
         {
-          url: "",
-          id: 
+          url:
+            "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&&fm=jpg&w=400&fit=max",
+          id: 1
         }
       ]
     };
+  },
+
+  methods: {
+    test: function test() {
+      console.log("yes");
+    }
   }
 };
 </script>
