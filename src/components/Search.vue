@@ -2,6 +2,7 @@
 <section>
 <input class="searchstyle" type="text" placeholder="Search" v-model="search" v-on:keyup.enter="submit">
 
+
 </section>
 
 </template>
@@ -34,14 +35,13 @@ methods:{
 .searchstyle {
     outline: none;
     border: none;
-    padding: 0 0 0 0rem;
     border-radius: 3rem;
     height: 4rem;
-    width: 40rem;
-    font-size: 32px;
-    background-color: rgb(238, 236, 236);
-    padding: 0 2rem 0 2rem;
-
+    width: 34rem;
+    font-size: 40px;
+    padding: 0 3rem 0 3rem;
+    background: rgb(228, 228, 228) url(../assets/icon.svg) left no-repeat;
+    background-size: 3rem;
 }
 
 </style>
