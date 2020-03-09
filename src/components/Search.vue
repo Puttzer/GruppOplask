@@ -1,6 +1,6 @@
 <template>
 <section>
-<input class="searchstyle" type="text" v-model="search" v-on:keyup.enter="submit">
+<input class="searchstyle" type="text" placeholder="Search" v-model="search" v-on:keyup.enter="submit">
 
 </section>
 
@@ -11,41 +11,37 @@
 
 export default {
     name: "Search",
-data:() => ({
+data () {
 
-return: {
-
-    images: [],
-    baseurl: `https://api.unsplash.com/search/photos?page=1&query=office&client_id=xIJxifBLKfQ8_NIf_DtYTV2PDygh-oXGyu7ki-qQ-Uk`,
+return {
     search: ''
 }
 
-    }),
+    },
 
 methods:{
+    submit() {
+        this.$emit("search", this.search)
+    }
 
-submit(){
-const url = `https://api.unsplash.com/search/photos?page=1&query=${this.search}&client_id=xIJxifBLKfQ8_NIf_DtYTV2PDygh-oXGyu7ki-qQ-Uk`
-        
-    fetch(url)
-        .then((resp) => resp.json())
-        .then(function(data) {
-            let images = data.results;
-            this.$emit("search", images)
-
-            })
-            .catch(function(error) {
-                console.log(error);
-         })
-        }
     }
 }
 
 </script>
 
-<style lang="scoped">
+<style lang="scss">
+
 .searchstyle {
-    border-radius: 60%;
+    outline: none;
+    border: none;
+    padding: 0 0 0 0rem;
+    border-radius: 3rem;
+    height: 4rem;
+    width: 40rem;
+    font-size: 32px;
+    background-color: rgb(238, 236, 236);
+    // padding: 0 2rem 0 2rem;
+
 }
 
 </style>
