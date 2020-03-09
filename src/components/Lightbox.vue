@@ -1,5 +1,9 @@
 <template>
-  <div class="lightbox" v-if="show == true"></div>
+  <div class="lightbox" v-if="show == true" @click="closething()">
+    <div class="wrapper" v-for="image in images" v-bind:key="image.id">
+      <img :src="image.url" alt />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -12,11 +16,17 @@ export default {
       images: [
         {
           url:
-            "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&&fm=jpg&w=400&fit=max",
+            "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&fm=jpg&fit=crop&w=1080&q=80&fit=max",
           id: 1
         }
       ]
     };
+  },
+
+  methods: {
+    closething: function() {
+      this.$emit("close");
+    }
   }
 };
 </script>
@@ -33,5 +43,12 @@ export default {
   left: 0;
   backdrop-filter: blur(2px);
   opacity: 0.93;
+}
+
+.wrapper {
+  // gallery gang wuz here!
+  .img {
+    opacity: 1;
+  }
 }
 </style>
