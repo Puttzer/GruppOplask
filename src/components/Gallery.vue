@@ -1,8 +1,8 @@
 <template>
   <div class="gallery">
-    <Lightbox :show="show" @close="show=false" />
+    <Lightbox :show="show" @close="show=false" :bigImage="bigImage" />
     <div class="wrapper" v-for="image in images" v-bind:key="image.id">
-      <img :src="image.url" alt v-on:click="showLightbox" />
+      <img :src="image.urls.small" alt v-on:click="showLightbox(image.urls.full)" />
     </div>
   </div>
 </template>
@@ -11,22 +11,20 @@
 import Lightbox from "./Lightbox";
 export default {
   components: { Lightbox },
+  props: {
+    images: Array
+  },
   data: () => {
     return {
       show: false,
-      images: [
-        {
-          url:
-            "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&&fm=jpg&w=400&fit=max",
-          id: 1
-        }
-      ]
+      bigImage: ""
     };
   },
 
   methods: {
-    showLightbox() {
+    showLightbox(bigURL) {
       this.show = true;
+      this.bigImage = bigURL
     }
   }
 };

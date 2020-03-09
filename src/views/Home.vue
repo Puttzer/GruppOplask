@@ -35,8 +35,7 @@ export default {
       const url = `https://api.unsplash.com/search/photos?page=${this.page}&per_page=9&query=${searchWord}&client_id=mNBE4VyLg2ReXfZj46B7KH19_XZbuzuRXZubUrrtBCw`;
 
       fetch(url)
-        .then(resp => resp.json(console.log(resp.headers)))
-
+        .then(resp => resp.json())
         .then(data => {
           console.log(data);
           this.images = data.results;
