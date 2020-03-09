@@ -2,7 +2,7 @@
   <div class="gallery">
     <Lightbox :show="show" @close="show=false" :bigImage="bigImage" />
     <div class="wrapper" v-for="image in images" v-bind:key="image.id">
-      <img :src="image.urls.small" alt v-on:click="showLightbox(image.urls.full)" />
+      <img :src="image.urls.small" alt v-on:click="showLightbox(image.urls.regular)" />
     </div>
   </div>
 </template>

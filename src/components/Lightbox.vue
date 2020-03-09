@@ -1,7 +1,7 @@
 <template>
   <div class="lightbox" v-if="show == true" @click="closething()">
-    <div class="wrapper" v-for="image in images" v-bind:key="image.id">
-      <img :src="bigImage" alt />
+    <div class="wrapper">
+      <img :src="bigImage" />
     </div>
   </div>
 </template>
@@ -14,8 +14,6 @@ export default {
   },
   data() {
     return {
-      images: [
-      ]
     };
   },
 
