@@ -40,7 +40,7 @@ methods:{
     width: 40rem;
     font-size: 32px;
     background-color: rgb(238, 236, 236);
-    // padding: 0 2rem 0 2rem;
+    padding: 0 2rem 0 2rem;
 
 }
 
