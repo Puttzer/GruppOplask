@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <div class="wrapper" v-for="image in images" v-bind:key="image.id">
-      <img :src="image.url" alt />
+      <img :src="image.url" alt @click="test()" />
     </div>
   </div>
 </template>
@@ -13,21 +13,17 @@ export default {
       images: [
         {
           url:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExOTYwNn0",
+            "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&&fm=jpg&w=400&fit=max",
           id: 1
-        },
-        {
-          url:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExOTYwNn0",
-          id: 2
-        },
-        {
-          url:
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjExOTYwNn0",
-          id: 3
         }
       ]
     };
+  },
+
+  methods: {
+    test: function test() {
+      console.log("yes");
+    }
   }
 };
 </script>
@@ -40,7 +36,7 @@ export default {
 
   .wrapper {
     img {
-      max-width: 100px;
+      max-width: 310px;
     }
   }
 }
